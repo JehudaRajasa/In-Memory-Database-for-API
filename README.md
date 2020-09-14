@@ -2,6 +2,6 @@
 
 Dear reviewer,
 
-Kindly refer to the user.js file.
+Kindly refer to the user.js (api/routes/user) file.
 
 Thank you.
