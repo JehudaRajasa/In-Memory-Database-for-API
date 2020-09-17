@@ -1,7 +1,6 @@
-# Query Parameters
+# MongoDB Database API
 
-Dear reviewer,
+This project is a simple database API using MongoDB Atlas.
 
-Kindly refer to the user.js (api/routes/user) file.
-
-Thank you.
+Added functionality:
+- Retrieve data of a specific product from query params #courtesy of grilhami
