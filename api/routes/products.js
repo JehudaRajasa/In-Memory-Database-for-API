@@ -4,10 +4,8 @@ const mongoose = require('mongoose');
 
 const Product = require('../models/product');
 
-router.get('/', (req, res, next) => {
-    var name = req.query.name;
-    console.log(name);
-    Product.findOne(name, function(err, docs) {
+//router.get('/', (req, res, next) => {
+//    Product.find()
     //    .exec()
     //    .then(docs => {
     //        console.log(err);
@@ -19,6 +17,35 @@ router.get('/', (req, res, next) => {
     //            error: err
      //       });
      //   });
+//});
+
+//New GET request courtesy of grilhami to get data of specific product from query params
+router.get('', (req, res, next) => {
+    var name = req.query.name;
+
+    if (!name) {
+        Product.find({}, (err, result) => {
+            if (err) {
+                console.log(err);
+                res.status(500).json({error: err});
+            } else {
+                console.log(result);
+                res.status(200).json(result);
+            }
+        });
+
+    } else {
+        // Ref: https://mongoosejs.com/docs/api.html#model_Model.findOne
+        Product.findOne({name: name}, (err, result) => {
+            if (err) {
+                console.log(err)
+                res.status(500).json({error: err});
+            } else {
+                console.log(result)
+                res.status(200).json(result)
+            }
+        });
+    }
 });
 
 router.post('/', (req, res, next) => {
