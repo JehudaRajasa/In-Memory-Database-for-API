@@ -8,7 +8,21 @@ const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/user');
 
-mongoose.connect('mongodb+srv://Admin:' + process.env.MONGO_ATLAS_PW + '@api.t8twk.mongodb.net/<dbname>?retryWrites=true&w=majority');
+//const MongoClient = require('mongodb').MongoClient;
+//const uri = "mongodb+srv://Admin:APIMDB@api.t8twk.mongodb.net/<dbname>?retryWrites=true&w=majority";
+//const client = new MongoClient(uri, { useNewUrlParser: true,  useUnifiedTopology: true });
+//client.connect(err => {
+//  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+//  client.close();
+//});
+mongoose.connect(
+    'mongodb+srv://Admin:' + process.env.MONGO_ATLAS_PW + '@api.t8twk.mongodb.net/<dbname>?retryWrites=true&w=majority',
+    {
+        useNewUrlParser: true, 
+        useUnifiedTopology: true 
+    }
+);
 
 app.use(morgan('dev')); //Run morgan
 app.use(bodyParser.urlencoded({extended: false})); //extended:true allows parsing body with rich data
