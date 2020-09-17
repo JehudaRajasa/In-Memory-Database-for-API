@@ -1,7 +1,7 @@
-# In-Memory-Database-for-API
+# Query Parameters
 
-This project is a continuation of the previous API project that adds a functional database for user input.
+Dear reviewer,
 
-This project utilizes MongoDB Atlas which is a cloud database service managed by AWS.
+Kindly refer to the user.js (api/routes/user) file.
 
-Credits to Maximilian Mschwarzmueller for the references.
+Thank you.
